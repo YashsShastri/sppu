@@ -1,0 +1,391 @@
+exp 7
+
+### Logic Explanation:
+
+This C++ program demonstrates the use of the `map` associative container, which stores key-value pairs where the keys are unique. In this case, the keys are state names (represented as strings), and the values are their corresponding populations (represented as integers).
+
+1. **Map Declaration:**
+   The program declares a `map<string, int>` called `populationMap`, where each state name (string) is associated with an integer value representing the population of that state in millions.
+
+2. **Inserting Data:**
+   The `insert()` function is used to add pairs of state names and their populations to the map. For example, `"MH"` is associated with `112` million, `"UP"` with `199` million, and so on.
+
+3. **Displaying the Map Size and Contents:**
+   - The program first prints the size of the map using `populationMap.size()`.
+   - It then uses an iterator (`iter`) to traverse through the map and print each key-value pair (state and its population).
+
+4. **Searching for a State:**
+   - The program asks the user to input a state name.
+   - The `find()` function is used to search for the state in the map. If the state is found, its population is displayed; otherwise, it prints "Key is not in populationMap."
+
+5. **Clearing the Map:**
+   - Finally, the program clears all entries from the map using `populationMap.clear()`.
+
+### Code Complexity:
+- **Time Complexity:**
+  - Insertion: O(log n) for each `insert()`.
+  - Searching: O(log n) for `find()`.
+  - Iterating over the map: O(n), where n is the number of elements in the map.
+  
+- **Space Complexity:**
+  - O(n), where n is the number of entries in the map.
+
+### Viva Questions and Answers:
+
+1. **What is a `map` in C++?**
+   - A `map` in C++ is an associative container that stores key-value pairs in a sorted order. It ensures that each key is unique, and it provides efficient searching, insertion, and deletion operations with a time complexity of O(log n).
+
+2. **Why is the `map` sorted by default?**
+   - The `map` is sorted by default because it uses a binary search tree (typically a Red-Black Tree) to store its elements. This ensures that the keys are always stored in a sorted order.
+
+3. **What is the purpose of the `find()` function in a map?**
+   - The `find()` function is used to search for a specific key in the map. It returns an iterator pointing to the element if the key is found, or it returns `map::end()` if the key is not present.
+
+4. **What is the difference between `map` and `unordered_map` in C++?**
+   - `map` stores elements in sorted order using a tree structure, while `unordered_map` stores elements in an unordered fashion using a hash table. `unordered_map` provides faster average time complexity for operations like insertion and search (O(1)), but does not guarantee sorted order of keys.
+
+5. **What does the `clear()` function do in a map?**
+   - The `clear()` function removes all the elements from the map, making it empty.
+
+6. **What would happen if the user enters a state not in the map?**
+   - If the user enters a state that is not present in the map, the program will display "Key is not in populationMap." The `find()` function will return `map::end()` in this case, indicating the key does not exist.
+
+Let me know if you'd like to add any more details or additional questions!
+
+---------------------------------------------------------------------------------------------------------------------
+exp6
+### Logic Explanation:
+
+This C++ program uses the Standard Template Library (STL) for sorting and searching user-defined records such as personal records (Name, Date of Birth, and Telephone Number). It uses a `vector` container for storing the records and performs the sorting and searching operations.
+
+1. **Class Definition:**
+   - The `person` class contains three public members: `name`, `dob` (Date of Birth), and `tel` (telephone number).
+   - The class has two functions:
+     - `getdata()` which prompts the user to input personal data.
+     - `displaydata()` which displays the stored data.
+
+2. **Sorting:**
+   - The program accepts multiple records and stores them in an array of `person` objects.
+   - A `compare()` function is used to define the sorting criteria. This function compares the `name` fields of two `person` objects, and sorts them alphabetically using `sort()` from the STL.
+   - After sorting, the program prints the sorted list of records.
+
+3. **Searching:**
+   - After sorting, the program asks the user for a name to search.
+   - It then copies the `name` field of each `person` object into a string array `z[]` for binary search.
+   - The `binary_search()` function from STL is used to check if the input name exists in the sorted array of names.
+
+### Code Complexity:
+
+- **Time Complexity:**
+  - Sorting: O(n log n) due to the `sort()` function.
+  - Binary Search: O(log n) for `binary_search()`.
+  
+- **Space Complexity:**
+  - O(n) for storing the `person` objects and string array `z[]`.
+
+### Viva Questions and Answers:
+
+1. **What is the `sort()` function in C++?**
+   - The `sort()` function is part of the `<algorithm>` library. It sorts the elements of a container (like an array or vector) in ascending order by default, or it can be customized using a comparison function.
+
+2. **What is binary search and when should it be used?**
+   - Binary search is an efficient algorithm for finding an element in a sorted array or range. It works by repeatedly dividing the search interval in half, which reduces the time complexity to O(log n).
+
+3. **Why is `binary_search()` used in this program?**
+   - The program uses `binary_search()` to efficiently search for a specific name in the sorted list of names. Since the list is sorted, binary search can find the element much faster than a linear search.
+
+4. **What are STL containers?**
+   - STL (Standard Template Library) containers are collections of objects that manage data. Examples include vectors, lists, sets, and maps. These containers provide efficient ways to store and access data.
+
+5. **Why did you use a string array `z[]` to perform binary search on names instead of directly searching in the `person` array?**
+   - The `binary_search()` function requires a sorted range, and since `binary_search()` operates on a sorted array, we need to extract the names into a separate array (`z[]`) before performing the search.
+
+6. **What would happen if the user enters a name that is not present in the list?**
+   - If the entered name is not found in the list, the program will print "****RECORD NOT FOUND****" based on the result of the binary search.
+
+Let me know if you'd like to add more details or adjust the questions!
+------------------------------------------------------------------
+exp 5
+### Logic Explanation:
+
+This C++ program demonstrates a **function template** for performing the **selection sort** on both integer and float arrays. It uses a single `sel()` function template that can be used for arrays of any type (integer or float), making it flexible.
+
+1. **Template Function:**
+   - The `sel()` function is defined as a template, which allows it to work with arrays of any data type (e.g., `int` and `float`).
+   - The function sorts an array using the **selection sort algorithm**, which works by repeatedly finding the minimum element from the unsorted part of the array and swapping it with the first unsorted element.
+
+2. **Selection Sort Algorithm:**
+   - The outer loop iterates through the array, and for each element, the inner loop finds the smallest element in the remaining unsorted part of the array.
+   - The smallest element found is then swapped with the current element, effectively placing it in its correct position.
+
+3. **Input and Output:**
+   - In the `main()` function, two arrays are declared: one for integers (`A`) and another for floats (`B`).
+   - The program first takes input for an integer array, calls the `sel()` function to sort it, and then takes input for a float array and calls the `sel()` function again to sort it.
+
+### Code Complexity:
+
+- **Time Complexity:**
+  - The time complexity of **selection sort** is O(n²), where `n` is the number of elements in the array. This is because the outer loop runs `n` times and the inner loop runs `n-1`, `n-2`, ..., 1 times.
+  
+- **Space Complexity:**
+  - The space complexity is O(1), as the sorting is done in place and no extra space is used except for temporary variables like `min` and `temp`.
+
+### Viva Questions and Answers:
+
+1. **What is a function template in C++?**
+   - A function template allows you to define a function that can operate on different data types. The function is defined with a placeholder type (e.g., `T`) which will be replaced by the actual data type when the function is called.
+
+2. **Explain the selection sort algorithm.**
+   - Selection sort works by repeatedly selecting the smallest (or largest) element from the unsorted portion of the array and swapping it with the first unsorted element. This process continues until the array is sorted.
+
+3. **Why is the selection sort algorithm not efficient for large arrays?**
+   - Selection sort has a time complexity of O(n²), meaning its performance becomes slow for large arrays as it requires many comparisons and swaps. More efficient sorting algorithms like merge sort or quicksort have better average time complexities (O(n log n)).
+
+4. **What does the `template<class T>` syntax mean?**
+   - `template<class T>` is a way to define a generic function in C++. The `T` represents a placeholder for any data type that will be specified when the function is called.
+
+5. **What happens if you try to sort an array of a different type (e.g., `double`) using the `sel()` function?**
+   - Since the `sel()` function is a template, it can be used to sort arrays of any type that supports the `<` (less-than) operator for comparison. If the data type is compatible (like `double`), the function will work correctly.
+
+6. **What is the role of the `temp` variable in the selection sort?**
+   - The `temp` variable is used to temporarily hold the value of the element being swapped. It is necessary to prevent overwriting the value of an element during the swap operation.
+
+Let me know if you'd like more details or further questions!
+
+---------------------------------
+
+exp 4
+### Logic Explanation:
+
+This C++ program demonstrates how to write data to a file and then read from it. The following steps outline the logic:
+
+1. **Writing Data to a File:**
+   - An `ofstream` object (`Out_file`) is created, which is used for output operations.
+   - The file `Information.bat` is opened using the `open()` method with the `ios::out` flag, indicating it is for output (writing).
+   - The program prompts the user to enter information, which is read using `fgets()`. The input is stored in a `char` array (`Give_Info`).
+   - The `<<` operator is used to write the content of the array `Give_Info` to the file.
+   - After writing the information, the file is closed using the `close()` method.
+
+2. **Reading Data from the File:**
+   - An `ifstream` object (`In_file`) is created for input operations.
+   - The file `Information.bat` is opened with the `ios::in` flag, indicating it is for input (reading).
+   - The program reads the content of the file using `getline()`, which reads a line of text from the file and stores it in the `Get_Info` array.
+   - The content read from the file is displayed to the user.
+   - The file is then closed using the `close()` method.
+
+### Code Complexity:
+
+- **Time Complexity:**
+  - Writing to the file and reading from the file both depend on the number of characters written or read. Therefore, the time complexity for each operation is O(n), where `n` is the number of characters in the file.
+
+- **Space Complexity:**
+  - The space complexity is O(n) for storing the input and output data in arrays (`Give_Info` and `Get_Info`), where `n` is the maximum number of characters (200 in this case).
+
+### Viva Questions and Answers:
+
+1. **What is the difference between `ofstream` and `ifstream` in C++?**
+   - `ofstream` (output file stream) is used for writing to a file, while `ifstream` (input file stream) is used for reading from a file.
+
+2. **What is the purpose of the `open()` function in file handling?**
+   - The `open()` function is used to open a file for input or output operations. The mode of operation (e.g., `ios::in`, `ios::out`) specifies whether the file is opened for reading, writing, or both.
+
+3. **What is the use of the `getline()` function?**
+   - The `getline()` function is used to read a line of text from an input stream (like a file or user input). It reads characters until a newline is encountered or a specified limit is reached.
+
+4. **What happens if the file `Information.bat` already exists?**
+   - By default, when opening a file with `ios::out`, if the file already exists, its contents will be overwritten. If you want to append data to an existing file, the `ios::app` flag should be used.
+
+5. **Why is `fgets()` used instead of `cin` for reading input?**
+   - `fgets()` is used because it allows reading input with spaces, unlike `cin`, which stops reading when a space or newline is encountered. `fgets()` also provides a safer way to read input with a limit on the number of characters.
+
+6. **What is a batch file in the context of this program?**
+   - A batch file (.bat) is a script file containing a series of commands to be executed by the command-line interpreter. In this program, the file `Information.bat` is used as an example of file handling, but it does not execute any commands.
+
+Let me know if you need more details or have further questions!
+
+------------------------------
+exp 3
+
+### Logic Explanation:
+
+The program demonstrates the concept of inheritance, exception handling, and data manipulation in C++ with a publishing company that markets both book and audiocassette versions. The following classes and methods work together to achieve the functionality:
+
+1. **Class `Publication`:**
+   - This is the base class containing common attributes, `title` and `price`, for both books and tapes.
+   - It has a method `getdata()` to input these common details and a method `putdata()` to display them.
+   - The `Set_Zero()` method is used to reset the data members to zero in case of an exception.
+
+2. **Class `Book`:**
+   - This class inherits from `Publication` and adds a specific attribute, `page_count`, representing the number of pages in the book.
+   - The `getdata()` method in `Book` calls the base class's `getdata()` to input common information and then inputs `page_count`.
+   - Exception handling is performed for negative values of `price` and `page_count`. If a negative value is entered for either, an exception is thrown, and the `Set_Zero()` method is called to reset all values to zero.
+   - The `putdata()` method displays the book details, including `title`, `price`, and `page_count`.
+
+3. **Class `Tape`:**
+   - This class also inherits from `Publication` and adds the `playing_time` attribute, representing the duration of the tape in minutes.
+   - The `getdata()` method works similarly to the one in `Book`, accepting input for the `price` and `playing_time`.
+   - Exception handling is performed for negative values of `price` and `playing_time`. If a negative value is entered for either, an exception is thrown, and the `Set_Zero()` method is called to reset all values to zero.
+   - The `putdata()` method displays the tape details, including `title`, `price`, and `playing_time`.
+
+4. **Exception Handling:**
+   - The program uses `try-catch` blocks to catch exceptions for negative values of `price`, `page_count`, and `playing_time`.
+   - The exception blocks catch `int` for price and `double` for page count and playing time, respectively. If an exception is caught, all values are reset to zero.
+
+### Code Complexity:
+
+- **Time Complexity:**
+  - For each object (book or tape), input and output operations are performed, each requiring O(1) time. The exception handling process also takes O(1) time, as the checks are simple conditional comparisons.
+
+- **Space Complexity:**
+  - The space complexity is O(1), as only a constant amount of memory is used for storing a fixed number of variables (i.e., `title`, `price`, `page_count`, `playing_time`).
+
+### Viva Questions and Answers:
+
+1. **What is inheritance in C++?**
+   - Inheritance is a mechanism in C++ where a new class (derived class) inherits properties and behaviors (methods) from an existing class (base class). This allows for code reuse and the creation of specialized subclasses.
+
+2. **What is the purpose of the `Set_Zero()` method?**
+   - The `Set_Zero()` method resets all the data members (like `title`, `price`, `page_count`, or `playing_time`) to default zero values in case an exception is thrown due to invalid input.
+
+3. **Why is exception handling used in this program?**
+   - Exception handling is used to manage invalid inputs (e.g., negative values for price, page count, or playing time). If an invalid input is entered, an exception is thrown, and all the data values are reset to zero.
+
+4. **How does `try-catch` work in this program?**
+   - The `try` block contains the code that may throw an exception (like entering a negative price). The `catch` blocks handle different types of exceptions (e.g., `int` for price, `double` for page count or playing time) and call `Set_Zero()` to reset values.
+
+5. **What would happen if the user enters negative values for `price`, `page_count`, or `playing_time`?**
+   - If a negative value is entered, an exception is thrown, and the program displays an error message and resets all values to zero.
+
+6. **What is the role of the `putdata()` method in each class?**
+   - The `putdata()` method is used to display the stored information of the object. It is called after input is collected and any exceptions have been handled.
+
+Let me know if you need further details or have additional questions!
+
+------------------------------------
+ex[p 2
+
+### Code Explanation:
+
+The provided C++ code involves the creation and manipulation of a `data` class that represents student information, including roll number, phone number, name, address, date of birth, class and division, and license number. The class utilizes various constructors (default, parameterized, and copy constructor) and a destructor, along with a static member to track the number of object instantiations.
+
+1. **Class `data`:**
+   - **Private Members:**
+     - `name`, `bg`, `address`, `dob`, `cldiv`, `lic` store student-specific information.
+     - `roll`, `phone` store the roll number and phone number.
+     - `static int c` keeps track of the number of objects created.
+   - **Constructors:**
+     - **Default Constructor:** Initializes members with default values and increments the static count `c` every time an object is created.
+     - **Parameterized Constructor:** Allows initialization of all members with given values and increments the static count `c`.
+     - **Copy Constructor:** Provides a way to create a new object as a copy of an existing one. In this program, it simply prints a message but doesn't perform any actual copying.
+   - **Destructor:** Prints a message when an object is destroyed.
+   - **Member Functions:**
+     - `getdata()`: Accepts input from the user for all the data members.
+     - `show()`: Displays the stored information.
+     - `getcount()`: Returns the static variable `c`, representing the number of object creations.
+
+2. **Main Function:**
+   - **Dynamic Memory Allocation:** The program dynamically allocates objects using the `new` keyword and calls member functions `show()` to display their data.
+   - **Database Array:** The program allows for an arbitrary number of student records by asking the user for the size of the database. It stores student data in an array of `data` objects.
+   - **Destructor:** Once an object is no longer needed, it is deleted using `delete` to free memory.
+
+### Key Operations:
+
+1. **Object Creation:**
+   - `d1` is created using the default constructor.
+   - `d2` is created using the parameterized constructor.
+   - `d3` is created using the copy constructor (though no actual copying is done here).
+   
+2. **Object Deletion:** After displaying the data for `d1`, `d2`, and `d3`, the objects are deleted using `delete` to free up memory.
+
+3. **User-Input Database:** The program prompts the user to input the size of a student database (`num`). It then creates an array of `data` objects, allowing the user to input and display data for each student.
+
+4. **Static Member Count:** After all objects are created and deleted, the program prints the number of constructor calls and the total number of objects created, tracked by the static variable `c`.
+
+### Time Complexity:
+- **Time complexity for `getdata()` and `show()`**: These functions perform constant-time operations (O(1)) for each student record. Since they are called for `num` students, the total complexity for input and output is O(n), where `n` is the number of student records.
+- **Time complexity for constructor calls**: For each object, the constructor is called once, so the total time complexity for object creation is O(n).
+
+### Space Complexity:
+- **Space complexity**: The space complexity is O(n) due to the array of `data` objects created in the main function.
+
+### Viva Questions and Answers:
+
+1. **What is the purpose of the static variable `c` in this program?**
+   - The static variable `c` is used to keep track of the total number of objects created from the `data` class. It is incremented every time an object is created using either the default or parameterized constructor.
+
+2. **How does dynamic memory allocation work in this program?**
+   - Dynamic memory allocation is used with the `new` keyword to create objects on the heap. For example, `data *d1 = new data();` creates a `data` object dynamically, and it must be explicitly deleted using `delete` to free memory.
+
+3. **What happens if we don't use the `delete` keyword?**
+   - If the `delete` keyword is not used, it would lead to a memory leak because the dynamically allocated memory would not be freed, leading to a situation where the program consumes memory without releasing it.
+
+4. **Why is the copy constructor not doing anything in this program?**
+   - The copy constructor is just printing a message, but it is not actually performing any copying of data between objects. In a typical scenario, the copy constructor would copy values from one object to another.
+
+5. **What is the role of the destructor in this program?**
+   - The destructor is called when an object is deleted or goes out of scope. It prints a message indicating that the object has been destroyed, which helps in understanding the memory management process.
+
+Let me know if you'd like further clarifications or adjustments!
+
+-------------------
+exp 1
+### Code Explanation:
+
+This C++ program implements a class `complex` to represent complex numbers and overloads operators for addition, subtraction, and multiplication using friend functions. The program allows the user to input two complex numbers, perform arithmetic operations on them, and display the results.
+
+1. **Class Definition (`complex`):**
+   - **Private Members:**
+     - `x` and `y`: Represent the real and imaginary parts of a complex number.
+   - **Constructors:**
+     - **Default Constructor:** Initializes `x` and `y` to `0` when a `complex` object is created.
+   - **Friend Functions:**
+     - **`operator >>`:** Overloads the input stream (`>>`) to take input for two complex numbers from the user.
+     - **`operator <<`:** Overloads the output stream (`<<`) to display the two complex numbers.
+     - **`operator +`:** Overloads the `+` operator to add two complex numbers. The result is displayed in the form of a complex number.
+     - **`operator -`:** Overloads the `-` operator to subtract two complex numbers and displays the result.
+     - **`operator *`:** Overloads the `*` operator to multiply two complex numbers and displays the result.
+
+2. **Main Function:**
+   - **Input:** The program first takes input for two complex numbers using the `operator >>` function.
+   - **Display:** It then displays the two complex numbers using the `operator <<` function.
+   - **Operations:** The user is prompted to choose one of the operations: addition (`+`), subtraction (`-`), or multiplication (`*`). The corresponding operator function is called, and the result is displayed.
+   - **Repeat:** The program asks the user if they want to perform another operation. If the user inputs `Y` or `y`, the program continues; otherwise, it exits.
+
+### Key Concepts:
+- **Friend Functions:** The operator functions (`>>`, `<<`, `+`, `-`, `*`) are declared as friend functions so that they can access the private members `x` and `y` of the `complex` class.
+- **Operator Overloading:** This program demonstrates overloading of various operators (`>>`, `<<`, `+`, `-`, `*`) to perform specific operations on complex numbers.
+
+### Time Complexity:
+- **Time complexity for input and output operations (`>>`, `<<`):** These operations take constant time, O(1).
+- **Time complexity for arithmetic operations (`+`, `-`, `*`):** These operations also take constant time, O(1), as they only involve basic arithmetic on two complex numbers.
+
+### Space Complexity:
+- **Space complexity:** The space complexity is O(1) since we are only using a fixed amount of memory for the two complex numbers and auxiliary variables.
+
+### Viva Questions and Answers:
+
+1. **Why are friend functions used in this program?**
+   - Friend functions are used to overload the operators (`>>`, `<<`, `+`, `-`, `*`) because they need to access the private members `x` and `y` of the `complex` class. Friend functions are not members of the class but can still access its private and protected members.
+
+2. **How does operator overloading work in this program?**
+   - Operator overloading allows you to define custom behaviors for operators. In this program, the `+`, `-`, and `*` operators are overloaded to perform arithmetic operations on complex numbers. Similarly, the `>>` and `<<` operators are overloaded to handle input and output for complex numbers.
+
+3. **What is the significance of using `friend` with operator functions?**
+   - The `friend` keyword allows the operator functions to access the private members of the `complex` class, such as `x` and `y`, which would otherwise be inaccessible. This is necessary for the operators to perform their intended tasks on the complex numbers.
+
+4. **What would happen if you didn't overload the operators for complex numbers?**
+   - If operators like `+`, `-`, and `*` weren't overloaded, you wouldn't be able to directly perform arithmetic operations on complex numbers using the familiar `+`, `-`, and `*` syntax. Instead, you would need to write separate functions for each operation, making the code less intuitive.
+
+5. **Why is the multiplication formula for complex numbers as follows:**
+   - The multiplication of two complex numbers \( (a + bi) \) and \( (c + di) \) follows the distributive property:
+     \[
+     (a + bi) \times (c + di) = (ac - bd) + (ad + bc)i
+     \]
+   - This formula is implemented in the overloaded `*` operator.
+
+6. **Can you explain the logic behind the output for complex number addition, subtraction, and multiplication when the imaginary part is negative?**
+   - If the imaginary part (`y`) of the result is negative, the program changes the sign for formatting, displaying the result as `a - bi` instead of `a + (-b)i`. This ensures the output is in the standard form for complex numbers.
+
+Let me know if you'd like further clarifications!
+-----------------------------------------------
+

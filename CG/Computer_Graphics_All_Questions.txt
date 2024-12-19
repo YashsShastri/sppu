@@ -1,0 +1,132 @@
+
+General Questions
+1. What is the purpose of the `graphics.h` library in C++?
+2. Explain the difference between `putpixel()` and `line()` functions in graphics programming.
+3. How does the `initgraph()` function work in initializing the graphics mode?
+4. What are the primary parameters used in the `setcolor()` function, and how do they affect graphics?
+5. What is the role of `cleardevice()` in graphics programming?
+6. Explain the importance of the delay function in animation.
+7. How do you close a graphics window programmatically in C++?
+
+Program-Specific Questions
+
+Scan Line Polygon Fill Algorithm
+1. What is the purpose of the Scan Line Polygon Fill algorithm in computer graphics?
+2. How do you calculate the intersection points for a polygon in the Scan Line algorithm?
+3. Explain the role of sorting intersection points in the Scan Line algorithm.
+4. Why is it necessary to set a boundary for minimum (`xmin`, `ymin`) and maximum (`xmax`, `ymax`) coordinates in polygon filling?
+5. What happens if the number of vertices of a polygon is less than 3?
+
+Line Clipping Algorithm
+1. What is the purpose of the Line Clipping algorithm in computer graphics?
+2. Explain the concept of region codes in the Line Clipping algorithm.
+3. Describe how a line's visibility is determined in the Line Clipping algorithm.
+4. How does the program calculate new endpoints after clipping?
+5. What are the four main region code conditions checked in the algorithm?
+
+Midpoint Circle Drawing Algorithm
+1. How does the Midpoint Circle Drawing algorithm generate symmetric points?
+2. What is the role of decision parameters (`d`) in circle drawing algorithms?
+3. Why are transformations like `x0` and `y0` offsets used in circle drawing?
+4. How can you modify the circle-drawing algorithm to create patterns like concentric circles?
+
+DDA Line Algorithm
+1. What is the difference between the DDA algorithm and the Bresenham algorithm for line drawing?
+2. Explain how slopes (dx, dy) affect line drawing in the DDA algorithm.
+3. How does the program implement variations like dotted, dashed, and thick lines using DDA?
+4. What mathematical calculations are required for incrementing `x` and `y` coordinates in the DDA algorithm?
+
+2D Transformations
+1. What is the difference between translation, scaling, and rotation in 2D transformations?
+2. Explain how midpoint rotation differs from basic rotation in graphics.
+3. How does the program handle scaling when negative values are provided?
+4. Why are cos and sin functions used in rotation transformations?
+5. What is the purpose of the transformation matrix in graphics?
+
+Koch Curve and Snowflake
+1. What are fractals, and why are they important in computer graphics?
+2. Explain the mathematical calculations behind generating the Koch Curve.
+3. How is the peak of an equilateral triangle calculated for the Koch Snowflake?
+4. What happens when you increase the number of iterations in the Koch Curve algorithm?
+5. How does recursion contribute to the generation of fractal patterns?
+
+Moving Car Animation
+1. How are loops used to create motion in graphics programming?
+2. Explain the role of coordinate transformations in creating car movement.
+3. How does the program use arcs and lines to draw wheels and car bodies?
+4. Why is `cleardevice()` repeatedly used during animation?
+
+Viva-Oriented Conceptual Questions
+1. Why is object-oriented programming useful in computer graphics?
+2. How do you ensure efficient memory usage in graphics-based applications?
+3. What are some challenges faced while implementing graphics algorithms in real-world systems?
+4. How does graphics programming differ when moving from 2D to 3D applications?
+5. Explain the difference between hardware and software rendering.
+
+Advanced Questions
+
+Mathematical Foundations
+1. What is the mathematical basis of the Bresenham line-drawing algorithm? Why does it avoid floating-point arithmetic?
+2. How do you derive the rotation matrix for 2D and 3D rotations?
+3. Explain the concept of homogeneous coordinates and their role in transformation matrices.
+4. Why is matrix multiplication used for chaining transformations?
+5. How are trigonometric calculations handled efficiently in graphical computations?
+
+Clipping and Windowing
+1. Explain the Liang-Barsky algorithm for line clipping and compare it with Cohen-Sutherland.
+2. What is viewport transformation, and why is it necessary?
+3. How do window-to-viewport transformations handle scaling and aspect ratio?
+
+Filling Algorithms
+1. Compare the Flood-Fill and Boundary-Fill algorithms for polygon filling.
+2. What challenges arise when filling polygons with overlapping or self-intersecting edges?
+3. How can anti-aliasing be applied to the Scan Line Polygon Fill algorithm?
+
+Rendering Techniques
+1. What is the role of Z-buffering in rendering 3D objects?
+2. Explain the difference between Gouraud and Phong shading models.
+3. What is ray tracing, and how does it differ from rasterization?
+
+Real-World Applications and Challenges
+
+Applications
+1. How are clipping algorithms used in modern graphics software (e.g., video games or CAD tools)?
+2. What are some real-world applications of fractal patterns like the Koch curve or Mandelbrot set?
+3. How is the Midpoint Circle Algorithm extended to draw ellipses?
+
+Challenges
+1. How does precision loss affect graphical computations (e.g., floating-point rounding errors)?
+2. What happens if you try to render objects outside the screen coordinates?
+3. How would you handle performance issues in programs involving real-time animations?
+
+Conceptual Graphics Questions
+
+Graphics Pipeline
+1. What are the main stages of the graphics rendering pipeline?
+2. How does rasterization convert geometric data into pixels?
+3. What is the difference between vertex and fragment shaders?
+
+3D Graphics
+1. What is the difference between orthographic and perspective projections in 3D?
+2. How are transformations like scaling and rotation handled in 3D space?
+3. Explain back-face culling and its importance in rendering.
+
+User Interaction
+1. How can mouse or keyboard inputs be integrated into a graphics application?
+2. How would you implement a zoom-in and zoom-out feature in a graphics program?
+3. How do event-driven programming models interact with graphics applications?
+
+Advanced Graphics Programming
+1. How do you implement double buffering to reduce flickering in animations?
+2. What are the key differences between fixed-function and programmable graphics pipelines?
+3. How do you draw Bezier curves or B-splines programmatically?
+
+Object-Oriented Graphics Programming
+1. How is polymorphism used in graphics programming for objects like shapes or lines?
+2. What are the benefits of encapsulation in designing graphical applications?
+3. How would you extend the functionality of a base class for a shape (e.g., add 3D capabilities)?
+
+Theoretical Questions Beyond the PDF
+1. What are the limitations of using `graphics.h` for large-scale graphical applications?
+2. What is OpenGL, and how does it differ from `graphics.h`?
+3. How is GPU acceleration used in modern graphics programming?

@@ -1,0 +1,171 @@
+
+General OOP Concepts
+1. What is Object-Oriented Programming (OOP), and how does it differ from procedural programming?
+2. Explain the four principles of OOP: Encapsulation, Inheritance, Polymorphism, and Abstraction.
+3. How are constructors and destructors used in C++? Provide examples.
+4. What is the role of the `this` pointer in C++?
+5. How is operator overloading implemented in C++? Give an example.
+6. What are friend functions, and why are they used?
+7. What is the difference between static and dynamic memory allocation? Explain with examples.
+8. Explain the concept of multiple inheritance in C++ and its potential challenges.
+
+Practical-Specific Questions
+
+Practical 1: Complex Numbers
+1. How is operator overloading used to add and multiply complex numbers?
+2. What is the purpose of the `<<` and `>>` operators, and how are they overloaded?
+3. Why do we use default constructors when working with complex numbers?
+4. How does operator precedence affect the overloaded `+` and `*` operators?
+
+Practical 2: Calculator Using Switch Statement
+1. How does the switch statement work in a C++ program?
+2. What precautions should be taken when implementing division in a calculator (e.g., division by zero)?
+3. What are the differences between a `while` loop and a `do-while` loop, as used in the calculator program?
+4. How would you extend the calculator to handle more operations, such as power or modulus?
+
+Practical 3: Student Database
+1. How are constructors and destructors used to initialize and destroy student data?
+2. Explain the role of the copy constructor in this program.
+3. How does dynamic memory allocation (`new` and `delete`) work in creating and managing student objects?
+4. What is the advantage of using inline functions for small, frequently called operations?
+
+Practical 4: User-Defined Exceptions
+1. How are user-defined exceptions created and handled in C++?
+2. Why is the `try-catch` block used, and how does it improve error handling?
+3. What are the limitations of exception handling in C++?
+4. How can exceptions be used to validate user inputs like age, income, and city?
+
+Practical 5: File Handling
+1. What is the difference between `ifstream`, `ofstream`, and `fstream` in C++?
+2. How do you write objects to a file and read them back in C++?
+3. What are the common errors encountered during file I/O operations, and how are they handled?
+4. Why is it important to close a file after performing read/write operations?
+
+Practical 6: STL for Sorting and Searching
+1. What is the role of the Standard Template Library (STL) in C++?
+2. How is the `vector` container used for storing and managing user-defined records?
+3. What is the purpose of the `sort()` and `find_if()` functions in STL?
+4. Explain the lambda function used in searching a record by name.
+
+Practical 7: Map Associative Containers
+1. What are associative containers in STL, and how does `map` work?
+2. How do you add key-value pairs to a map in C++?
+3. Explain how the `find()` function works in searching for a key in a map.
+4. What are the advantages and limitations of using `map` for storing and retrieving data?
+
+Practical 8: Publication System
+1. How are base and derived classes used to represent publications like books and tapes?
+2. Explain the significance of exception handling in ensuring valid data for publication objects.
+3. What are virtual functions, and why are they important in inheritance?
+4. How does resetting data in case of an exception help maintain program stability?
+
+Practical 9: Book Inventory System
+1. How is the concept of encapsulation used to manage book details like author, title, price, and stock?
+2. What are the benefits of using dynamic memory allocation (`new` and `delete`) in this program?
+3. How does the system handle cases where the required number of copies is not available in stock?
+4. Explain the importance of searching algorithms in managing an inventory system.
+
+Practical 10: Employee Bio-Data
+1. How is multiple inheritance implemented in creating a bio-data system?
+2. What are the challenges of combining multiple base classes into a single derived class?
+3. How can you ensure data consistency when using multiple inheritance?
+4. Explain the role of protected access specifiers in inheritance.
+
+Practical 11: Function Templates
+1. What is a function template, and how is it different from function overloading?
+2. Explain how selection sort works for both integer and float arrays using a function template.
+3. How does the compiler determine the data type of a function template during compilation?
+4. What are the advantages of using templates in C++?
+
+Advanced OOP Questions
+1. What is polymorphism, and how is it achieved in C++ using virtual functions?
+2. Explain the difference between runtime polymorphism and compile-time polymorphism.
+3. What is the purpose of the virtual destructor, and when is it needed?
+4. How does exception handling affect program performance?
+5. What is the difference between shallow copy and deep copy in C++?
+
+Viva-Oriented Conceptual Questions
+1. What are access specifiers in C++, and how do they control data visibility in a class?
+2. How does the concept of encapsulation improve code reusability and security?
+3. What is the difference between static and dynamic polymorphism in C++?
+4. How does C++ implement abstraction, and why is it important?
+5. Explain how STL containers like `vector` and `map` are used to simplify programming tasks.
+
+In-Depth OOP Questions
+
+Constructors and Destructors
+1. What is the difference between default, parameterized, and copy constructors?
+2. Why is a destructor required in C++? Can a destructor be overloaded?
+3. What is the significance of the `explicit` keyword in constructors?
+4. How is a constructor called during object creation in inheritance?
+
+Inheritance
+1. Explain the difference between single, multiple, and hierarchical inheritance.
+2. How does C++ resolve ambiguity in multiple inheritance? What is the role of the scope resolution operator in this case?
+3. What are virtual base classes, and when are they used?
+4. How does private inheritance differ from public and protected inheritance?
+
+Operator Overloading
+1. Which operators cannot be overloaded in C++? Why?
+2. What is the difference between overloading operators as member functions and non-member functions?
+3. How can you overload the subscript operator `[]` in C++?
+
+Polymorphism
+1. How does C++ implement runtime polymorphism using virtual functions and pointers?
+2. What is a pure virtual function? How is it different from a regular virtual function?
+3. What is the vtable (virtual table), and how does it work in C++?
+4. Explain with an example how dynamic binding works in inheritance.
+
+Dynamic Memory Management
+1. What is the difference between `malloc`/`free` and `new`/`delete` in C++?
+2. How can memory leaks occur in a program, and how can they be avoided?
+3. What is the significance of overloading `new` and `delete` operators in C++?
+
+Template and STL Questions
+1. What are class templates, and how do they differ from function templates?
+2. How is type safety ensured in STL containers?
+3. What is the difference between `vector` and `list` in STL? When would you use each?
+4. How does `priority_queue` differ from `queue` in STL?
+5. Explain the role of iterators in STL and how they simplify container traversal.
+
+File Handling
+1. How do you use file streams (`ifstream` and `ofstream`) to handle binary and text files?
+2. What is the difference between `seekg()` and `seekp()` in file handling?
+3. How can file handling be combined with exception handling in C++?
+4. How would you implement a program to append data to an existing file?
+
+Advanced Questions on Exception Handling
+1. What happens if an exception is thrown but not caught in a program?
+2. How can you rethrow an exception in C++? Provide an example.
+3. What is the difference between standard exceptions and user-defined exceptions in C++?
+4. How would you implement a custom exception hierarchy for a complex application?
+
+Real-World Scenarios
+1. How would you design a library management system using OOP principles?
+2. What design patterns would you use for an e-commerce inventory system? Why?
+3. How can polymorphism be used to implement a payment system with different modes like credit card, cash, and online payment?
+4. Explain how OOP is applied in GUI-based applications.
+
+Data Structures in OOP
+1. How can linked lists be implemented using OOP principles?
+2. Explain how polymorphism can be used to design a class hierarchy for shapes (e.g., circle, rectangle, triangle).
+3. How would you implement a binary search tree (BST) using OOP in C++?
+
+Viva-Oriented Questions on Design and Optimization
+1. How does encapsulation help in maintaining large-scale software systems?
+2. What is the purpose of the SOLID principles in OOP design?
+3. How would you optimize a program that extensively uses virtual functions?
+4. What are the benefits and limitations of using multiple inheritance in real-world applications?
+5. How can you reduce the runtime overhead caused by exception handling?
+
+Comparative OOP Questions
+1. Compare and contrast procedural programming with object-oriented programming.
+2. How does Java's implementation of OOP differ from C++?
+3. What is the difference between an abstract class and an interface in OOP?
+4. Compare virtual destructors in C++ with garbage collection in Java.
+
+Miscellaneous Questions
+1. What is the role of friend classes and friend functions in OOP?
+2. Explain the difference between aggregation, association, and composition in OOP.
+3. How is multithreading handled in C++? Can OOP principles be applied to thread management?
+4. What are functors in C++, and how are they implemented?

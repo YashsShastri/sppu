@@ -1,0 +1,93 @@
+General OOP Concepts
+
+1. OOP vs. Procedural Programming:
+OOP organizes code around objects, emphasizing encapsulation, inheritance, and polymorphism. Procedural programming focuses on functions and sequential execution.
+
+2. Four Principles of OOP:
+- Encapsulation: Bundles data with methods.
+- Inheritance: Reuses code across classes.
+- Polymorphism: Allows overriding methods.
+- Abstraction: Hides complexity, showing only the essentials.
+
+3. Constructors and Destructors:
+A constructor initializes an object, while a destructor cleans up resources. Example:
+```cpp
+class MyClass { public: MyClass() {}; ~MyClass() {}; };
+```
+
+4. Role of `this` Pointer:
+The `this` pointer refers to the current object, often used to resolve conflicts or return the instance.
+
+5. Operator Overloading:
+Customizes operators for user-defined types. Example:
+```cpp
+Complex operator+(Complex c) { return Complex(x+c.x, y+c.y); }
+```
+
+6. Friend Functions:
+Friend functions access private members of a class, often for operator overloading or utility functions.
+
+7. Static vs. Dynamic Memory Allocation:
+Static allocation reserves memory at compile-time; dynamic allocation uses `new` and `delete` at runtime.
+
+8. Multiple Inheritance Challenges:
+Multiple inheritance may lead to ambiguity, resolved using virtual base classes or scope resolution operators.
+
+Practical-Specific Questions
+
+Practical 1: Complex Numbers
+
+1. Operator Overloading for Complex Numbers:
+Overloads `+` and `*` to add and multiply complex numbers by customizing operator behavior.
+
+2. Purpose of `<<` and `>>`:
+Used for input and output; overload them to handle custom data types.
+
+3. Default Constructors:
+Ensures objects are initialized with default values to avoid uninitialized states.
+
+4. Operator Precedence:
+Defines evaluation order; precedence of `*` is higher than `+`.
+
+Practical 2: Calculator Using Switch Statement
+
+1. Switch Statement in C++:
+Executes code based on a matching case, useful for menu-driven programs like calculators.
+
+2. Precautions for Division:
+Check for zero to prevent divide-by-zero errors.
+
+3. `while` vs. `do-while` Loop:
+`while` checks the condition before execution, `do-while` executes at least once.
+
+4. Extending Calculator:
+Add cases for operations like power (`pow`) or modulus (`%`) with supporting code.
+
+Practical 3: Student Database
+
+1. Constructors and Destructors:
+Constructors initialize objects; destructors free resources like dynamically allocated memory.
+
+2. Copy Constructor:
+Copies data from one object to another, ensuring proper duplication.
+
+3. Dynamic Memory Allocation:
+`new` allocates memory dynamically, and `delete` frees it to prevent memory leaks.
+
+4. Inline Functions:
+Boost performance by avoiding function call overhead for small, frequently used functions.
+
+Practical 4: User-Defined Exceptions
+
+1. User-Defined Exceptions:
+Create custom exceptions by inheriting from `std::exception` and overriding the `what()` method.
+
+2. `try-catch` Block:
+Catches runtime errors and improves program stability.
+
+3. Limitations of Exception Handling:
+Cannot handle hardware-level issues or logic errors.
+
+4. Validating Inputs with Exceptions:
+Throw exceptions for invalid inputs and handle them in `catch` blocks.
+
